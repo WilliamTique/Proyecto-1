@@ -1,0 +1,80 @@
+/*Diseño de los estilos*/
+
+/*Diseño del estilo general de los botones*/
+*{
+    margin: 0; /*Modificación de la margen*/
+    padding: 0; /*Modificación del padding*/
+    box-sizing: border-box; /*Modificación del ancho y alto*/
+    font-family: sans-serif;  /*Establecimiento de la fuente*/
+}
+
+/*Diseño del body*/
+body {
+    min-height: 100vh; /*Modificación de la altura*/
+    background-color: rgb(98, 132, 185); /*Color del fondo de la pagina*/
+    display: flex; /*Alineación de los elementos*/
+    justify-content: center; /*Centra horizontalmente los elementos*/
+    align-items: center; /*Centra verticalmente los elementos*/
+
+}
+
+/*Diseño de la calculadora*/
+.calculadora {
+    background-color: rgba(255, 246, 229, 0.664);  /*Color de l fondo de la calculadora*/
+    color: rgb(73, 76, 78); /*Color de los numeros en pantalla*/
+    display: grid; /*Organización de los botones*/
+    grid-template-columns: repeat(4, 1fr); /*Organización de los botones en 4 columnas*/
+    width: 400px; /*Ancho de la calculadora*/
+    padding: 1.8rem; /*Tamaño del padding de la calculadora*/
+    border-radius: 1.5rem; /*Borde redondeado de la calculadora*/
+    gap: 0.75rem; /*Espacio entre los elementos de la calculadora*/
+}
+
+/*Diseño de la pantalla*/
+.pantalla {
+    grid-column: 1/5; /*Ancho de la pantalla*/
+    background-color: rgb(255, 255, 255); /*Color fondo de la pantalla*/
+    padding: 1.5rem; /*Padding de la pantalla*/
+    font-size: 2.5rem; /*Tamaño de la fuente de la pantalla*/
+    text-align: right; /*Alineación del texto de la pantalla*/
+    border-radius: 0.75rem; /*Borde de la pantalla*/
+    font-weight: 600; /*Tamaño de la negrilla de la pantalla*/
+    margin-bottom: 0.75rem; /*Ancho del margen inferión de la pantalla*/
+
+}
+
+/*Diseño de los botones*/
+.boton {
+    background-color: rgb(56, 56, 92); /*Color del fondo de los botones*/
+    color: rgb(255, 255, 255); /*Color de la fuente de los botones*/
+    border: 1; /*Tamaño del borde de los botones*/
+    padding: 1.25rem; /*Tamaño del padding de los botones*/
+    font-size: 1.25rem; /*Tamaño de la fuente de los botones*/
+    display: flex; /* Alineación del contenido de los botones*/
+    justify-content: center; /*Cetra horizontalmente los botones*/
+    align-items: center; /*Centra verticalmente los botones*/
+    border-radius: 1rem; /*Borde Redondeado de los botones*/
+    cursor: pointer; /*Cambia de tipo el cursor cuando se para sobre algun boton*/
+}
+
+/*Color del boton al tener el cursor sobre el*/
+.boton:hover {
+    background-color: rgb(239, 192, 76)
+}
+
+/*Tamaño de columnas utilizadas para el boton "0"*/
+#cero{
+    grid-column: span 2;
+}
+
+/*Tamaño de columnas utilizadas para el boton "=", color y tamaño de la fuente*/
+#igual{
+    grid-row: span 2;
+    background-color: rgb(220, 90, 45);
+    font-size: 1.5rem;
+}
+
+/*Color del boton al tener el cursor sobre el boton "="*/
+#igual:hover{
+    background-color: rgb(132, 167, 227);
+}
