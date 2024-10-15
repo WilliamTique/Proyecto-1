@@ -60,25 +60,24 @@ botones.forEach(boton => {
         //Programación para al hacer click en un boton se muestre el numero seleccionado en pantalla
         if (resultadoVisible) {
             // Si ya hay un resultado visible, reinicia la pantalla con el nuevo número
-            pantalla.textContent = botonOn;
-            resultadoVisible = false; // Reinicia el estado
+            if (/[+\-*/]/.test(botonOn)) {
+                pantalla.textContent += botonOn;
+                resultadoVisible = false; // Permitir que se siga operando
+            } else {
+                pantalla.textContent = botonOn; // Reinicia con el nuevo número
+            }
             ultimoElemento = botonOn;
         } else {
             if (pantalla.textContent === "0" || pantalla.textContent === "¡Error!") {
-                
                 if (/[+\-*/.]/.test(botonOn)) {
                     pantalla.textContent = "0" + botonOn; // Agrega el operador después del 0       
-            
                 } else {
-
-                pantalla.textContent = botonOn; // Reinicia con el nuevo número
-            }
-
+                    pantalla.textContent = botonOn; // Reinicia con el nuevo número
+                }
             } else if (pantalla.textContent === "¡Error!") {
                 pantalla.textContent = botonOn; //
-
             } else {
-
+                
                 // Evitar dos operadores consecutivos
                 if (/[+\-*/.]/.test(pantalla.textContent.slice(-1)) && /[+\-*/.]/.test(botonOn)) {
                     return;
